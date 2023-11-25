@@ -1,6 +1,8 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/products_screen/product_details.dart';
 import 'package:emart_seller/views/widgets/appbar_widget.dart';
 import 'package:emart_seller/views/widgets/text_style.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 
 class ProductsScreen extends StatelessWidget {
@@ -27,7 +29,9 @@ class ProductsScreen extends StatelessWidget {
                   20,
                   (index) => Card(
                         child: ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(() => ProductDetails());
+                          },
                           leading: Image.asset(imgProduct,
                               width: 100, height: 100, fit: BoxFit.cover),
                           title:
