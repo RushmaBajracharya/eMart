@@ -39,18 +39,20 @@ class HomeScreen extends StatelessWidget {
           10.heightBox,
           boldText(text: popular, color: fontGrey, size: 16.0),
           20.heightBox,
-          ListView(
-            physics: BouncingScrollPhysics(),
-            shrinkWrap: true,
-            children: List.generate(
-                3,
-                (index) => ListTile(
-                      onTap: () {},
-                      leading: Image.asset(imgProduct,
-                          width: 100, height: 100, fit: BoxFit.cover),
-                      title: boldText(text: "Product title", color: fontGrey),
-                      subtitle: normalText(text: "\$40.0", color: darkGrey),
-                    )),
+          Expanded(
+            child: ListView(
+              physics: BouncingScrollPhysics(),
+              shrinkWrap: true,
+              children: List.generate(
+                  8,
+                  (index) => ListTile(
+                        onTap: () {},
+                        leading: Image.asset(imgProduct,
+                            width: 100, height: 100, fit: BoxFit.cover),
+                        title: boldText(text: "Product title", color: fontGrey),
+                        subtitle: normalText(text: "\$40.0", color: darkGrey),
+                      )),
+            ),
           )
         ]),
       ),

@@ -1,4 +1,5 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/products_screen/add_product.dart';
 import 'package:emart_seller/views/products_screen/product_details.dart';
 import 'package:emart_seller/views/widgets/appbar_widget.dart';
 import 'package:emart_seller/views/widgets/text_style.dart';
@@ -13,7 +14,9 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: purpleColor,
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => AddProduct());
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,
@@ -36,7 +39,13 @@ class ProductsScreen extends StatelessWidget {
                               width: 100, height: 100, fit: BoxFit.cover),
                           title:
                               boldText(text: "Product title", color: fontGrey),
-                          subtitle: normalText(text: "\$40.0", color: darkGrey),
+                          subtitle: Row(
+                            children: [
+                              normalText(text: "\$40.0", color: darkGrey),
+                              10.widthBox,
+                              boldText(text: "Featured", color: green)
+                            ],
+                          ),
                           trailing: VxPopupMenu(
                             arrowSize: 0.0,
                             child: Icon(Icons.more_vert_rounded),
